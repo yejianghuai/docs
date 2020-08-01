@@ -1,0 +1,115 @@
+
+.clearfix::after {
+  content: "";
+  height: 0;
+  display: block;
+  clear: both;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.underline-normarl {
+  text-decoration: underline;
+}
+
+.margin_left10px {
+  margin-left: 10px;
+}
+
+.margin_left8px {
+  margin-left: 8px;
+}
+
+.margin_left4px {
+  margin-left: 4px;
+}
+
+.width_100 {
+  width: 100px;
+}
+
+.padding {
+  padding: 8px 24px 8px 16px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-end{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.inline-flex-between {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ellipsis-1,
+.ellipsis-2,
+.ellipsis-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.card {
+  /* margin-bottom: 8px; */
+  padding: 8px;
+  color: #303133;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+
+.underline{
+  display: inline-block;
+  width: 100px;
+  text-decoration: underline;
+}
+.not-select {
+  -webkit-user-select: none; /*webkit浏览器*/
+     -moz-user-select: none; /*火狐*/
+      -ms-user-select: none; /*IE10*/
+          user-select: none;
+
+   -khtml-user-select: none; /*早期浏览器*/
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 10px;
+}
