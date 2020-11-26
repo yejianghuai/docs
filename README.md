@@ -1,3 +1,7 @@
-# docs
-vuepress博客项目
-
+---
+home: true
+bgImage: /assets/mountain.jpg
+bgImageStyle: {
+  height: '540px',
+}
+---
