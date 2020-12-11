@@ -23,31 +23,34 @@ const setHtmlFont = function() {
         recalc = function() {
             const { clientWidth } = docEl;
 
-            if (!clientWidth) return;
-            docEl.style.fontSize = `${16 * (clientWidth / 320)}px`;
-        };
+        if (!clientWidth) return;
+        docEl.style.fontSize = `${16 * (clientWidth / 320)}px`;
+    };
 
-    if (!document.addEventListener) return;
-    docEl.style.fontSize = `${16 * (docEl.clientWidth / 320)}px`;
-    window.addEventListener(resizeEvt, recalc, false);
-    document.addEventListener('DOMContentLoaded', recalc, false);
+if (!document.addEventListener) return;
+docEl.style.fontSize = `${16 * (docEl.clientWidth / 320)}px`;
+window.addEventListener(resizeEvt, recalc, false);
+document.addEventListener('DOMContentLoaded', recalc, false);
 };
 
 export default class demo extends React.Component {
-    state={
-        ...
-    }
-
-     componentDidMount() {
-        setHtmlFont();
-    }
-    
-    componentWillUnmount() {
-        document.querySelectorAll('html')[0].style.fontSize = '';
-    }
-
-    render(){
-        ...
-    }
+state={
+...
 }
+
+ componentDidMount() {
+    setHtmlFont();
+}
+
+componentWillUnmount() {
+    document.querySelectorAll('html')[0].style.fontSize = '';
+}
+
+render(){
+    ...
+}
+}
+
+```
+
 ```

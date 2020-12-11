@@ -8,6 +8,9 @@ tags:
  - axios
 ---
 <Boxx/>
+
+
+
 # React中axios的安装与使用
 
 官网：www.npmjs.com
@@ -53,7 +56,7 @@ export default class Axios extends Component {
     let api = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20';//接口必须支持后台跨域或者使用jsonp才可以实现，否则会请求失败
     axios.get(api)
       .then((response) => {
-        
+      
         console.log(response.data.result);
         this.setState({
           list: response.data.result
@@ -81,12 +84,6 @@ axios.get('/user?ID=12345')
     console.log(error);
   });
 ```
-
-
-
-
-
-
 
 # Fetch-jsonp的安装与使用方法
 

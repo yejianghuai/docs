@@ -8,12 +8,14 @@ tags:
   - hooks
 ---
 <Boxx/>
-# Reack Hooks 学习笔记
 
 ---
+
 <img class='custom' style='width:280px' src='../assets/react/theworld.gif' />
 <img class='custom' style='width:280px' src='../assets/react/dio.gif' />
 <img class='custom' style='width:280px' src='../assets/react/spiderwagen.gif' />
+
+# Reack Hooks 学习笔记
 
 ## Hooks 中文翻译为：行为
 
@@ -35,7 +37,7 @@ const Example = () => {
 export default Example;
 ```
 
- - 自定义 useState
+- 自定义 useState
 
 ```js
 const useCount = (initValue) => {
@@ -357,8 +359,8 @@ export default Example;
     return <div>{count}</div>;
   };
   ```
-
 - 构造自己的 hooks 行为
+
   ```js
   import React, { useEffect, useState } from "react";
   sleep =(time)=>{
@@ -395,6 +397,7 @@ export default Example;
   export default Example;
   ```
 - 每一种行为都是一个Hook
+
   ```js
   import React, { useEffect, useState } from "react";
   const Example=()=>{

@@ -1,13 +1,13 @@
 ---
-title: React 搭建（2018记）
-date: 2018-05-12
+title: 从零开始搭建React项目
+date: 2020-12-07
 categories:
  - react
 tags:
  - react
- - webpack
 ---
 <Boxx/>
+
 # 从零开始搭建React项目
 
 ## 1. Webpack基础概念
@@ -33,12 +33,12 @@ Webpack 有以下几个核心概念：
 
 构建过程：
 
-1. 从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有 Module。 
+1. 从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有 Module。
 2. 每找到一个 Module， 就会根据配置的 Loader 去找出对应的转换规则。
 3. 对 Module 进行转换后，再解析出当前 Module 依赖的 Module。
 4. 这些模块会以 Entry 为单位进行分组，一个 Entry 和其所有依赖的 Module 被分到一个组也就是一个 Chunk。
 5. 最后 Webpack 会把所有 Chunk 转换成文件输出。
-6. 在整个流程中 Webpack 会在恰当的时机执行 Plugin 里定义的逻辑。 
+6. 在整个流程中 Webpack 会在恰当的时机执行 Plugin 里定义的逻辑。
 
 ## 2. 项目需求
 
@@ -64,7 +64,6 @@ NodeJS版本10.4.1。
    ```js
    npm init -y
    ```
-
 2. 本地安装webpack
 
    webpack4版本命名行相关的功能独立到Webpack-cli。
@@ -72,21 +71,19 @@ NodeJS版本10.4.1。
    ```js
    npm i webpack webpack-cli -D
    ```
-
 3. 新建webpack.config.js 配置文件。
 
    ```js
    webpack默认会查找 webpack.config.js 作为配置文件。
-   
+
    自定义配置文件名称：
    webpack --config xx.js
    ```
-
 4. 基础配置
 
    ```js
    webpack配置采用commonJS规范，通过module.export导出一个描述如何构建的 Object 对象。
-   
+
    module.exports={
        entry:{},     //入口配置*
        output:{},    //出口配置*
@@ -106,11 +103,10 @@ NodeJS版本10.4.1。
    │  package.json
    │  webpack.config.js
    ├─dist
-   │      index.html        
+   │      index.html      
    └─src
            main.js
    ```
-
 2. main.js 内容：
 
    ```js
@@ -119,17 +115,16 @@ NodeJS版本10.4.1。
            this.name = name;
            this.age = age;
        }
-   
+
        coding() {
            return `${this.name} is coding`;
        }
    }
-   
+
    let ui= new Ui('hqz','18');
-   
+
    document.getElementById('app').innerText=ui.coding();
    ```
-
 3. index.html 内容：
 
    ```js
@@ -144,12 +139,11 @@ NodeJS版本10.4.1。
    </body>
    </html>
    ```
-
 4. webpack配置
 
    ```js
    const path=require("path");
-   
+
    module.exports={
        entry:'./src/main.js',     //入口文件
        output:{                   //出口配置
@@ -185,9 +179,7 @@ babel 7.X的主要变更：
    npm i babel-upgrade -g
    babel-upgrade --write
    ```
-
 2. 重新安装包
-
 3. 修改配置文件中的包名
 
 配置：
@@ -198,7 +190,6 @@ babel 7.X的主要变更：
    npm i -D @babel/core @babel/preset-env babel-loader
    @babel/plugin-transform-object-rest-spread @babel/plugin-transform-export-extensions @babel/plugin-transform-class-properties @babel/plugin-syntax-dynamic-import
    ```
-
 2. 配置webpack
 
    ```js
@@ -231,17 +222,16 @@ babel 7.X的主要变更：
                        ]
                    }
                }
-   
+
            }]
        },
    ```
-
 3. 执行编译
 
    ```js
    package.json 的 script字段添加如下：
    "build": "webpack"
-   
+
    执行 npm run build
    ```
 
@@ -256,13 +246,12 @@ babel 7.X的主要变更：
    ```js
    npm i -D react react-dom
    ```
-
 2. mian.js
 
    ```js
    import React, { Component } from 'react';
    import ReactDOM from 'react-dom';
-   
+
    class App extends Component {
        render() {
            return <h1>Hello word!</h1>
@@ -280,7 +269,6 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    ```js
    npm i -D @babel/preset-react
    ```
-
 2. 配置webpack (在ES6环境的基础上)
 
    ```js
@@ -290,11 +278,11 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
                test: /\.js$/,   
                use: {
                    loader: "babel-loader", 
-                   options: {               
+                   options: {             
                        presets: ["@babel/preset-env","@babel/preset-react"]  //用于解析ES6+React
                    }
                }
-   
+
            }]
        },
    ```
@@ -310,12 +298,11 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    ```js
    │  package.json
    │  webpack.config.js
-   ├─dist     
+   ├─dist   
    └─src
            main.js
            template.html
    ```
-
 2. template.html 内容：
 
    ```js
@@ -329,27 +316,23 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    </body>
    </html>
    ```
-
 3. 本地安装
 
    ```js
    npm i -D html-webpack-plugin
    ```
-
 4. webpack配置
 
    ```js
    const HtmlWebpackPlugin = require('html-webpack-plugin');  //引入插件
-   
+
    plugins:[
        new HtmlWebpackPlugin({
        	template:'./src/template.html',  //html模板
        })
    ]
    ```
-
 5. 编译
-
 6. 编译后生成的HTML
 
    ```js
@@ -361,7 +344,7 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    <body>
    <div id="app"></div>
    <script type="text/javascript" src="bundle.js"></script>   //自动引入JS文件
-   
+
    </body>
    </html>
    ```
@@ -377,27 +360,26 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    │  webpack.config.js
    │  template.html
    ├─dist
-   └─src                   
-       ├─A                 
+   └─src                 
+       ├─A               
        │      A.js 
        └─B
               B.js
    ```
-
 2. 配置webpack
 
    ```js
    const HtmlWebpackPlugin = require('html-webpack-plugin');  //引入插件
-   
+
    entry: {                           //多入口使用对象形式配置，chunk名称为key值
            A: './src/pages/A/A.js',
            B: './src/pages/B/B.js',
    },
-   output:{                   
+   output:{                 
            filename:'[name].bundle.js',  //[name]代表chunk名称
            path: path.resolve(__dirname, 'dist')
    },
-       
+
    plugins:[
        new HtmlWebpackPlugin({
            chunks: ['A'],           //要引入的chunk
@@ -411,7 +393,6 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
        }),
    ]
    ```
-
 3. 编译后的目录结构
 
    ```js
@@ -423,8 +404,8 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
    |	A.html
    │  	B.bundle.js
    │  	B.html
-   └─src                   
-       ├─A                 
+   └─src                 
+       ├─A               
        │      A.js 
        └─B
               B.js
@@ -434,7 +415,7 @@ Babel也可用于解析JSX，需要使用babel-preset-react。
 
 webpack-dev-server提供了一个简单的服务器，用于访问 webpack 构建好的静态文件，我们日常开发时可以使用它来调试前端代码。 webpack-dev-server将构建好的项目存在内存中。
 
-DevServer 支持模块热替换, 可在不刷新整个网页的情况下实时预览页面。 原理是当一个源码发生变化时，只重新编译发生变化的模块，再用新输出的模块替换掉浏览器中对应的老模块。 
+DevServer 支持模块热替换, 可在不刷新整个网页的情况下实时预览页面。 原理是当一个源码发生变化时，只重新编译发生变化的模块，再用新输出的模块替换掉浏览器中对应的老模块。
 
 #### 3.5.1 devServer
 
@@ -443,16 +424,15 @@ DevServer 支持模块热替换, 可在不刷新整个网页的情况下实时�
    ```js
    npm i -D webpack-dev-server
    ```
-
 2. 配置webpack：
 
    ```js
    const webpack = require('webpack');
-   
+
    plugins: [
            new webpack.HotModuleReplacementPlugin()  //启用 HMR (webpack 4)
    ],
-   
+
    devServer:{
            hot: true,                 //开启模块热替换
            contentBase: './dist',     //将dist目录下的文件，作为额外可访问文件
@@ -461,39 +441,35 @@ DevServer 支持模块热替换, 可在不刷新整个网页的情况下实时�
            https: false,              //是否使用HTTPS服务
            open: true                 //自动打开网页，地址是host:port
    },
-   
+
    只有在通过 DevServer 去启动 Webpack 时配置文件里 devServer 才会生效，因为这些参数所对应的功能都是 DevServer 提供的，Webpack 本身并不认识 devServer 配置项。 
    ```
-
 3. 执行编译
 
    ```js
    package.json 的 script字段添加如下：
    "start": "webpack-dev-server"
-   
+
    执行 npm start
    ```
-
 4. [http://192.168.1.87:3000/A.html](http://192.168.1.87:3000/A.html)
 
-#### 3.5.2 open-browser-webpack-plugin 
+#### 3.5.2 open-browser-webpack-plugin
 
 1. 本地安装
 
    ```js
    npm i -D open-browser-webpack-plugin
    ```
-
 2. 配置webpack
 
    ```js
    const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-   
+
    plugins: [
        new OpenBrowserPlugin({ url: 'http://192.168.1.87:3000/A.html' })  //开启服务后，自动打开的地址
    ]
    ```
-
 3. 执行 npm start后，会自动打开http://192.168.1.87:3000/A.html页。
 
 ### 3.6 加载样式
@@ -512,7 +488,6 @@ webpack本身只认得JS文件，其他非JS文件需要用loader进行转换。
    ```js
    npm i -D css-loader style-loader
    ```
-
 2. 配置webpack
 
    ```js
@@ -544,7 +519,6 @@ webpack本身只认得JS文件，其他非JS文件需要用loader进行转换。
    ```js
    npm i -D sass-loader node-sass 
    ```
-
 2. 配置webpack
 
    ```js
@@ -574,7 +548,6 @@ url-loader封装了file-loader：
    ```js
    npm i -D file-loader url-loader
    ```
-
 2. 配置webpack
 
    ```js
@@ -605,7 +578,6 @@ url-loader封装了file-loader：
        ]
    },
    ```
-
 3. 编译后:
 
    * 大于30KB的资源，用file-loader处理，复制到dist/images目录下。
@@ -620,12 +592,11 @@ url-loader封装了file-loader：
    ```js
    npm i copy-webpack-plugin -D
    ```
-
 2. 配置webpack
 
    ```js
    const CopyWebpackPlugin = require('copy-webpack-plugin');
-   
+
    plugins:[
        new CopyWebpackPlugin([{
            from: './src/assets/public',  // 将此目录下的文件
@@ -633,7 +604,6 @@ url-loader封装了file-loader：
        }])
    ]
    ```
-
 3. 编译后 src/assets/public 下的文件将原封不动的输出到 dist/public 目录下。
 
 ### 3.8 第三方库
@@ -645,7 +615,6 @@ url-loader封装了file-loader：
    ```js
    npm i -D jquery
    ```
-
 2. 配置webpack
 
    ```js
@@ -654,14 +623,13 @@ url-loader封装了file-loader：
          $: 'jquery', 
        })
    ]
-   
-   ```
 
+   ```
 3. 在JS文件中就可直接使用jquery，不用导入。
 
 ### 3.9 其他
 
-#### 3.9.1 clean-webpack-plugin 
+#### 3.9.1 clean-webpack-plugin
 
 webpack打包的文件都放在dist文件夹下，但webpack无法追踪到哪些文件是实际项目中用到的。所以建议在每次构建前都清理下dist文件夹。
 
@@ -670,16 +638,15 @@ webpack打包的文件都放在dist文件夹下，但webpack无法追踪到哪�
    ```js
    npm i -D clean-webpack-plugin
    ```
-
 2. 配置webpack
 
    ```js
    const CleanWebpackPlugin=require('clean-webpack-plugin');
-   
+
    new CleanWebpackPlugin(['dist'])
    ```
 
-#### 3.9.2 Webpack-merge 
+#### 3.9.2 Webpack-merge
 
 实际项目开发中，一般会有三份配置文件：
 
@@ -694,23 +661,21 @@ webpack打包的文件都放在dist文件夹下，但webpack无法追踪到哪�
    ```js
    npm i -D webpack-merge
    ```
-
 2. 拆分webpack配置
 
    ```js
    webpack.prod.js:
-   
+
    const merge = require("webpack-merge");
    const common = require("./webpack.common.js");     //引入公共配置
    const CleanWebpackPlugin = require("clean-webpack-plugin");
-   
+
    module.exports = merge(common, {                   //合并配置
            plugins: [
                new CleanWebpackPlugin(["dist"])
            ],
    });
    ```
-
 3. 修改package.json的script字段
 
    ```js
@@ -718,7 +683,7 @@ webpack打包的文件都放在dist文件夹下，但webpack无法追踪到哪�
    "start": "webpack-dev-server --config webpack.dev.js"
    ```
 
-#### 3.9.3 source map 
+#### 3.9.3 source map
 
 React, ES6等经过webpack转换后，代码可读性非常差，不利于在浏览器中调试代码。可通过加载 Source Map 文件，在浏览器中调试源码。
 
@@ -742,9 +707,10 @@ module.exports = {
 };
 ```
 
-| 选项                        | 描述                                                         |
-| --------------------------- | ------------------------------------------------------------ |
-| development   (开发环境)    | process.env.NODE_ENV =development<br />并启用以下插件：<br /> NamedChunksPlugin ， NamedModulesPlugin |
+
+| 选项 | 描述 |
+| - | - |
+| development   (开发环境) | process.env.NODE_ENV =development<br />并启用以下插件：<br /> NamedChunksPlugin ， NamedModulesPlugin |
 | production       (生产环境) | process.env.NODE_ENV =production<br />并启用以下插件：<br />FlagDependencyUsagePlugin  ，  FlagIncludedChunksPlugin ,  ModuleConcatenationPlugin ,  NoEmitOnErrorsPlugin ,  OccurrenceOrderPlugin ,  SideEffectsFlagPlugin  ,  UglifyJsPlugin |
 
 可通过optimization字段，手动配置或覆盖mode配置。
@@ -781,13 +747,12 @@ module.exports = {
    ```js
    npm i -D mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin
    ```
-
 2. 配置webpack：分离css文件
 
    ```js
    webpack.common.js:
    const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-   
+
    module.exports = {
      plugins: [
        new MiniCssExtractPlugin({
@@ -807,25 +772,23 @@ module.exports = {
        ]
      }
    }
-   
+
    注：在Webpack4上用extract-text-webpack-plugin会出错，可以安装beta版本extract-text-webpack-plugin@next。
    ```
-
 3. 配置webpack：压缩css文件
 
    ```js
    webpack.prod.js:
    const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //用于压缩CSS代码
    const UglifyJsPlugin = require("uglifyjs-webpack-plugin");  //用于压缩JS代码
-   
+
    optimization: {
-           minimizer: [     
+           minimizer: [   
                new UglifyJsPlugin({}),
                new OptimizeCSSAssetsPlugin({})  //压缩css
            ]
        },
    ```
-
 
 #### 4.2.3 压缩HTML文件
 
@@ -851,7 +814,6 @@ HtmlWebpackPlugin支持压缩输出的HTML文件。
    ```js
    npm i -D image-webpack-loader
    ```
-
 2. 配置webpack
 
    ```js
@@ -861,9 +823,9 @@ HtmlWebpackPlugin支持压缩输出的HTML文件。
            {
                loader: 'url-loader',
                options: {
-                   limit: 1024 * 30,         
+                   limit: 1024 * 30,       
                    fallback: 'file-loader',  
-                   outputPath: 'images',    
+                   outputPath: 'images',  
                }
            },
        	'image-webpack-loader'        // 压缩图片
@@ -886,14 +848,14 @@ Tree Shaking要求：
    ```js
    export funcA from './TESTA'
    export funcB from './TESTB'
-   
+
    TESTA.js:
    import React from 'react';
    export default function funcA() {
      return <h1>I'm funcA</h1>;
    }
    console.log("funcAfuncAfuncA")   // 副作用代码
-   
+
    TESTB.js:
    import React from 'react';
    export default function funcB() {
@@ -901,13 +863,11 @@ Tree Shaking要求：
    }
    console.log("funcBfuncBfuncB")  // 副作用代码
    ```
-
 2. 在A.js中引用util.funcA，则funcB就是用不上的代码。
 
    ```js
    import {funcA} from '../util';
    ```
-
 3. 修改babel-loader配置。
 
    ```js
@@ -919,15 +879,13 @@ Tree Shaking要求：
        "react"
    ]
    ```
-
 4. package.json添加sideEffects字段： 将文件标记为无副作用
 
    ```js
    "sideEffects": ["*.css","*.scss"]  //避免样式文件被删除
-   
+
    注：此字段是webpack4新增的。
    ```
-
 5. 开启压缩，参照4.2.1
 
    执行编译后，A.bundle.js无funcB相关代码。
@@ -979,7 +937,7 @@ optimization: {
 
 拆分公共代码&第三方库配置:
 
-- 根据所使用的技术栈，找出所有页面都需要用到的基础库。如react、react-dom 等库，把它们提取到一个单独vendor.js文件。 
+- 根据所使用的技术栈，找出所有页面都需要用到的基础库。如react、react-dom 等库，把它们提取到一个单独vendor.js文件。
 - 在剔除了各个页面中被 vendor.js 包含的部分代码外，再找出所有页面都依赖的公共部分的代码提取出来放到 common.js中去。
 - 再为每个页面都生成一个单独的文件，这个文件中不再包含 vendor.js 和 common.js中包含的部分，而只包含各个页面单独需要的部分代码。
 
@@ -1007,9 +965,9 @@ optimization: {
 ```js
 new HtmlWebpackPlugin({
     chunks: ['A','common','vendor'],           //引入拆分出来的chunk
-    filename:'A.html',      
+    filename:'A.html',    
     template:'template.html', 
-    minify:{                 
+    minify:{               
     	collapseWhitespace:true  
     }
 }),
@@ -1048,7 +1006,7 @@ include: path.resolve(__dirname, 'src/assets')
 
 ### 4.6 Resolve
 
-Webpack 在启动后会从配置的入口模块出发找出所有依赖的模块，Resolve 配置 Webpack 如何寻找模块所对应的文件。 
+Webpack 在启动后会从配置的入口模块出发找出所有依赖的模块，Resolve 配置 Webpack 如何寻找模块所对应的文件。
 
 模块引入方式：
 
@@ -1062,15 +1020,15 @@ import React from 'react'         // 模块名
   2. 是文件则直接加载
   3. 是文件夹则继续查找文件夹下的 package.json 文件
   4. 有 package.json 文件则按照文件中 browser/module/main 字段的文件名来查找文件 (配置项：resolve.mainFields )
-  5. 无 package.json 或者无 browser/module/main字段则查找 index.js 文件  (配置项：resolve.mainFiles) 
+  5. 无 package.json 或者无 browser/module/main字段则查找 index.js 文件  (配置项：resolve.mainFiles)
 - 解析模块名
-  1. 查找当前文件目录下，父级目录及以上目录下的 node_modules 文件夹，看是否有对应名称的模块  (配置项：resolve.modules) 
+  1. 查找当前文件目录下，父级目录及以上目录下的 node_modules 文件夹，看是否有对应名称的模块  (配置项：resolve.modules)
 
 #### 4.6.1 resolve.modules
 
 resolve.modules 用于配置 Webpack 去哪些目录下寻找第三方模块。
 
- 默认值是 ['node_modules']，作用：
+默认值是 ['node_modules']，作用：
 
 * 先去当前目录下的node_modules目录下查找第三方模块。
 * 如果没找到，就去上级目录的node_modules目录下查找。
@@ -1098,7 +1056,7 @@ resolve.extensions 用于配置在尝试过程中用到的后缀列表，默认�
 extensions: ['.js', '.json']
 ```
 
-如果这个列表越长，或者正确的后缀在越后面，就会造成尝试的次数越多。 
+如果这个列表越长，或者正确的后缀在越后面，就会造成尝试的次数越多。
 
 建议：
 
@@ -1151,7 +1109,7 @@ hash类型：
 webpack配置：
 
 ```js
-output:{                
+output:{              
         filename:'[name].[chunkhash:8].bundle.js', 
         path: path.resolve(__dirname, 'dist') 
     },
@@ -1165,12 +1123,12 @@ plugins:[
 ### 4.8 遗留
 
 #### 4.8.1 热更新 （react-hot-loader）
+
 1. 安装
 
    ```js
    yarn add react-hot-loader
    ```
-
 2. webpack配置
 
    ```js
@@ -1183,10 +1141,10 @@ plugins:[
            hot: true,                 //开启模块热替换
        },
    3.在babel-loader中使用react-hot-loader/babel插件
-       plugins: ["react-hot-loader/babel"             
+       plugins: ["react-hot-loader/babel"           
    ```
-
 3. ##### 入口文件设置
+
 
    ```js
    import React, { Component } from 'react';
@@ -1194,8 +1152,8 @@ plugins:[
    import ReactDOM from 'react-dom';
    require('./a.css');
    import Test from './Test';
-   
-   
+
+
    function render(RootElement) {
      ReactDOM.render(
        <AppContainer>
@@ -1204,9 +1162,9 @@ plugins:[
        document.getElementById('app')
      );
    }
-   
+
    render(Test);
-   
+
    if (module.hot) {
      module.hot.accept('./Test', () => {
        render(Test);
