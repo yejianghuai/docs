@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Echarts 配置 | 薛定猫的……饿!</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="Hello, My Friend!">
+    <meta name="author" content="叶江怀">
+    <meta name="keyword" content="Mr.Ye's blog">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-72x72.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.bb2274cf.css" as="style"><link rel="preload" href="/assets/js/app.7fe1ffb5.js" as="script"><link rel="preload" href="/assets/js/3.788743b5.js" as="script"><link rel="preload" href="/assets/js/1.29b2523c.js" as="script"><link rel="preload" href="/assets/js/58.0cc5679f.js" as="script"><link rel="preload" href="/assets/js/14.37268bde.js" as="script"><link rel="prefetch" href="/assets/js/10.33e8fcae.js"><link rel="prefetch" href="/assets/js/11.58b0f855.js"><link rel="prefetch" href="/assets/js/12.d3d77849.js"><link rel="prefetch" href="/assets/js/13.da3b5997.js"><link rel="prefetch" href="/assets/js/15.366b6647.js"><link rel="prefetch" href="/assets/js/16.f6b1eeee.js"><link rel="prefetch" href="/assets/js/17.222b11e7.js"><link rel="prefetch" href="/assets/js/18.db7714f6.js"><link rel="prefetch" href="/assets/js/19.abccbbff.js"><link rel="prefetch" href="/assets/js/20.5a4e2a5d.js"><link rel="prefetch" href="/assets/js/21.db579749.js"><link rel="prefetch" href="/assets/js/22.6e5ca0f3.js"><link rel="prefetch" href="/assets/js/23.7c52708f.js"><link rel="prefetch" href="/assets/js/24.835ec374.js"><link rel="prefetch" href="/assets/js/25.70563461.js"><link rel="prefetch" href="/assets/js/26.1995e34c.js"><link rel="prefetch" href="/assets/js/27.7666d8db.js"><link rel="prefetch" href="/assets/js/28.b57e0511.js"><link rel="prefetch" href="/assets/js/29.fc21b11c.js"><link rel="prefetch" href="/assets/js/30.0a45186f.js"><link rel="prefetch" href="/assets/js/31.d2a230f4.js"><link rel="prefetch" href="/assets/js/32.2ab47593.js"><link rel="prefetch" href="/assets/js/33.e26ea18c.js"><link rel="prefetch" href="/assets/js/34.bc2f6ee5.js"><link rel="prefetch" href="/assets/js/35.b15a63ef.js"><link rel="prefetch" href="/assets/js/36.2579a938.js"><link rel="prefetch" href="/assets/js/37.80927296.js"><link rel="prefetch" href="/assets/js/38.5dd089f0.js"><link rel="prefetch" href="/assets/js/39.d1bf6b7c.js"><link rel="prefetch" href="/assets/js/4.d7a1e803.js"><link rel="prefetch" href="/assets/js/40.4baad75c.js"><link rel="prefetch" href="/assets/js/41.e8e5ba3c.js"><link rel="prefetch" href="/assets/js/42.4096bff8.js"><link rel="prefetch" href="/assets/js/43.bfae162b.js"><link rel="prefetch" href="/assets/js/44.231c106f.js"><link rel="prefetch" href="/assets/js/45.722fe00e.js"><link rel="prefetch" href="/assets/js/46.dbb87c4c.js"><link rel="prefetch" href="/assets/js/47.16206d7e.js"><link rel="prefetch" href="/assets/js/48.5f25d14c.js"><link rel="prefetch" href="/assets/js/49.ca5f1892.js"><link rel="prefetch" href="/assets/js/5.26ede9a1.js"><link rel="prefetch" href="/assets/js/50.ce3da0ea.js"><link rel="prefetch" href="/assets/js/51.212abfe1.js"><link rel="prefetch" href="/assets/js/52.9824f466.js"><link rel="prefetch" href="/assets/js/53.834d6860.js"><link rel="prefetch" href="/assets/js/54.1b0bc714.js"><link rel="prefetch" href="/assets/js/55.53342e5e.js"><link rel="prefetch" href="/assets/js/56.0b8fa9a4.js"><link rel="prefetch" href="/assets/js/57.b4beac92.js"><link rel="prefetch" href="/assets/js/59.b049f1a2.js"><link rel="prefetch" href="/assets/js/6.595dc63e.js"><link rel="prefetch" href="/assets/js/60.f71c42e1.js"><link rel="prefetch" href="/assets/js/61.b791ae63.js"><link rel="prefetch" href="/assets/js/62.45adf481.js"><link rel="prefetch" href="/assets/js/63.f9b5a2c5.js"><link rel="prefetch" href="/assets/js/64.032d3992.js"><link rel="prefetch" href="/assets/js/65.3c66b2ae.js"><link rel="prefetch" href="/assets/js/66.d60e26e5.js"><link rel="prefetch" href="/assets/js/67.b29e161f.js"><link rel="prefetch" href="/assets/js/68.34683a43.js"><link rel="prefetch" href="/assets/js/69.c633f73f.js"><link rel="prefetch" href="/assets/js/7.de304bbe.js"><link rel="prefetch" href="/assets/js/70.b99ee51d.js"><link rel="prefetch" href="/assets/js/71.b8e16fe4.js"><link rel="prefetch" href="/assets/js/72.126c91c0.js"><link rel="prefetch" href="/assets/js/73.d11c2027.js"><link rel="prefetch" href="/assets/js/74.d905ea46.js"><link rel="prefetch" href="/assets/js/75.7aa16953.js"><link rel="prefetch" href="/assets/js/76.3babcf0c.js"><link rel="prefetch" href="/assets/js/77.123f8522.js"><link rel="prefetch" href="/assets/js/78.01eddb07.js"><link rel="prefetch" href="/assets/js/79.adfd6ccb.js"><link rel="prefetch" href="/assets/js/8.95a77bd0.js"><link rel="prefetch" href="/assets/js/80.3e5f5aec.js"><link rel="prefetch" href="/assets/js/81.de79470c.js"><link rel="prefetch" href="/assets/js/82.18020199.js"><link rel="prefetch" href="/assets/js/83.68d39dbc.js"><link rel="prefetch" href="/assets/js/9.6447d90b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bb2274cf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-dad8a512><div data-v-dad8a512><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-dad8a512 data-v-dad8a512><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-dad8a512 data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>薛定猫的……饿!</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>叶江怀</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-dad8a512><header class="navbar" data-v-dad8a512><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="薛定猫的……饿!" class="logo"> <span class="site-name">薛定猫的……饿!</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      技术相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="iconfont undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data_structure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/database/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="https://yejianghuai.github.io/nav/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-category"></i>
+  导航
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/docs/resume/" class="nav-link"><i class="iconfont undefined"></i>
+  简历
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5c9c1b7d6fb9a070bd59b1bc/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/yejianghuai" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-dad8a512></div> <aside class="sidebar" data-v-dad8a512><div class="personal-info-wrapper" data-v-ca798c94 data-v-dad8a512><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    叶江怀
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>51</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>27</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont undefined"></i>
+      技术相关
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Javascript/" class="nav-link"><i class="iconfont undefined"></i>
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/categories/node/" class="nav-link"><i class="iconfont undefined"></i>
+  Node
+</a></li><li class="dropdown-item"><!----> <a href="/categories/data_structure/" class="nav-link"><i class="iconfont undefined"></i>
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/database/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/other/" class="nav-link"><i class="iconfont undefined"></i>
+  其他
+</a></li></ul></div></div><div class="nav-item"><a href="https://yejianghuai.github.io/nav/#/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-category"></i>
+  导航
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><a href="/docs/resume/" class="nav-link"><i class="iconfont undefined"></i>
+  简历
+</a></div><div class="nav-item"><a href="https://juejin.im/user/5c9c1b7d6fb9a070bd59b1bc/posts" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-juejin"></i>
+  掘金
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/yejianghuai" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-dad8a512><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>Echarts 配置</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>叶江怀</span>
+            
+          <span data-v-64685f0e>2020 - </span>
+          2021
+        </a></span></div></div> <div data-v-dad8a512><main class="page"><div class="page-title" style="display:none;"><h1>Echarts 配置</h1> <hr> <div data-v-aa64b9d0><i class="iconfont reco-account" data-v-aa64b9d0><span data-v-aa64b9d0>叶江怀</span></i> <i class="iconfont reco-date" data-v-aa64b9d0><span data-v-aa64b9d0>2019-07-02</span></i> <!----> <i class="iconfont reco-tag tags" data-v-aa64b9d0><span class="tag-item" data-v-aa64b9d0>echarts</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><div id="boxx" data-v-e16ac808><div data-v-e16ac808><p v-if="true" class="custom-block-title" data-v-e16ac808></p> <p v-if="true" data-v-e16ac808></p></div></div> <h2 id="一、使用方式"><a href="#一、使用方式" class="header-anchor">#</a> 一、使用方式</h2> <p><a href="http://echarts.baidu.com/echarts2/doc/doc.html#%E5%BC%95%E5%85%A5ECharts1" target="_blank" rel="noopener noreferrer">！引入 Echarts 的两种方式<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="_1-模块化包引入"><a href="#_1-模块化包引入" class="header-anchor">#</a> 1.模块化包引入</h3> <div class="language- extra-class"><pre><code>```js
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;ECharts&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 为ECharts准备一个具备大小（宽高）的Dom --&gt;
+    &lt;div id=&quot;main&quot; style=&quot;width: 600px;height:400px;&quot;&gt;&lt;/div&gt;
+    ...
+    &lt;!-- 引入 echarts.js --&gt;
+    &lt;script src=&quot;echarts.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        $(window).resize(function () {//图表随浏览器页面大小变化（响应式）
+            myChart.resize();
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre></div><h3 id="_2-模块化单文件引入（推荐）"><a href="#_2-模块化单文件引入（推荐）" class="header-anchor">#</a> 2.模块化单文件引入（推荐）</h3> <h4 id="echarts-单文件"><a href="#echarts-单文件" class="header-anchor">#</a> Echarts 单文件</h4> <p><img src="https://leanote.com/api/file/getImage?fileId=5832aaa9ab6441366c00c18e" alt="Echarts单文件"></p> <div class="language- extra-class"><pre><code>```js
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;ECharts&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 为ECharts准备一个具备大小（宽高）的Dom --&gt;
+    &lt;div id=&quot;main&quot; style=&quot;width: 600px;height:400px;&quot;&gt;&lt;/div&gt; &lt;div id=&quot;main&quot; style=&quot;height:400px;&quot;&gt;&lt;/div&gt;
+    ...
+    &lt;!-- 引入 require.js --&gt;
+    &lt;script src=&quot;./js/require.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- 引入 echarts.js --&gt;
+    &lt;script src=&quot;./js/echarts.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        require.config({
+            paths: {
+                echarts: './js/dist'
+            }
+        });
+        require(
+            [
+                'echarts',
+                'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+                'echarts/chart/bar'
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('main'));
+                var option = {
+                    ...
+                }
+                myChart.setOption(option);
+                $(window).resize(function () {//图表随浏览器页面大小变化（响应式）
+                    myChart.resize();
+                });
+            }
+        );
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre></div><h2 id="二、option-配置参数-直角坐标系相关组件"><a href="#二、option-配置参数-直角坐标系相关组件" class="header-anchor">#</a> 二、option 配置参数——直角坐标系相关组件</h2> <p>Attention！如果不是最后一个属性，需在配置后添加逗号英文半角的逗号, 此外，在配置中所有字符也都必须是英文半角的。</p> <div class="language- extra-class"><pre><code>```js
+option = {
+            // /************************************ 标题***********************************/
+            title: {
+                show: true,
+                x: 'center', //横轴位置
+                y: 'top', //竖轴位置
+                //或者方位词控制位置，例如left: 'center'
+                text: '折线图——主标题', //主标题内容
+
+                textStyle: {//主标题的具体样式fontFamily、fontWeight等
+                    fontSize: '18', //字体大小
+                    fontWeight: '600',//字体粗细 —— bold、bolder
+                    fontStyle: 'normal',//字体样式——斜体（italic、oblique）、正常（normal）
+                    fontFamily: 'SimSun',//标题字体
+                    color: '#3b8bce'//标题颜色
+                },
+                backgroundColor: '#f02',//标题模块背景色
+                borderColor: '#ccc',
+                borderWidth: 10,
+                padding: 20,
+                margin: '20',
+
+                link: '', //主标题链接
+                target: 'blank', // 指定窗口打开主标题超链接 self（当前窗口） | blank（新窗口）
+
+
+                subtext: '纯属虚构', // 副标题内容
+                sublink: '', //副标题链接
+                subtextStyle: {//副标题的具体样式fontFamily、fontWeight等
+                    //同主标题样式
+                },
+                subtarget: '',// 指定窗口打开副标题超链接 self（当前窗口） | blank（新窗口）
+                textAlign: 'left', //文本水平对齐
+                textBaseline: 'top', //垂直对齐
+
+                itemGrap: 10, //主标题和副标题的上下间距
+                shadowColor: 'rgba(0,0,0,.5)', //阴影颜色
+                shadowBlur: 10, //阴影模糊大小
+                shadowOffsetX: 10,//偏离水平位置
+                shadowOffsetY: 10//偏离垂直位置
+            },
+            // /*************************************样例***************************************/
+            legend: {
+                show: true,
+                x: 'left',
+                y: 10,
+                textStyle: {//文字样式
+
+                },
+                width: 'auto',//宽高默认自适应
+                height: 'auto',
+                orient: 'vertical',//图例的布局 水平（horizontal） | 垂直（vertical）
+                align: 'left', //图例标记和文本的对齐，默认auto， 图例在左（left） | 图例文字都居中，重叠（center）| 图例在右（right）
+                itemWidth: 20,//图例大小样式
+                itemHeight: 10,
+                /*样例格式*/
+                formatter: '{name}就是这么任性',
+                formatter: function (name) {
+                // 对name参数进行操作，返回想要的样例格式
+                    return echarts.format.truncateText(name + 'page', 50);//number控制样例的宽度
+                },
+                tooltip: { //提示框,可在样例过长被省略时使用
+                    show: true,
+                    position: [50, 50]
+                },
+
+                selectedMode: 'multiple',//图例选选择模式改变系列的显示状态，显示多个（multiple） 或者 单个（single）
+                inactiveColor: '#ccc',//图例关闭时的颜色
+
+                /*边框样式*/
+                borderColor: '#f02',//, '#545454','#999' 边框颜色
+                borderWidth: 1, //边框宽度
+                borderType: 'solid', //边框类型
+
+                /*投影样式*/
+                shadowColor: 'rgba(0,0,0,.5)', //投影颜色
+                shadowBlur: 10, //模糊程度
+                shadowOffsetX: 10, //偏离x的距离
+                shadowOffsetY: 10, //偏离y的距离
+                opacity: 0.5,//可在rbga中直接设置
+                data: ['邮件营销','联盟广告', '视频广告', '直接访问', '搜索引擎']//默认样式
+                data: [{
+                        name:'邮件营销',
+                     // 强制设置图形为圆。
+                        icon: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                        //'image://url'设置为图片，其中 url 为图片的链接。
+                     // 设置文本为红色
+                        textStyle: {
+                            color: 'blue'
+                         }
+                    }
+                },
+                ...
+                ]
+            },
+            // /*************************************网格***********************************/
+            grid: {//整个图表的位置
+                x: '10%', //与容器左边的距离
+                x2: '10%',//与容器右边的距离
+                y: '20%',//与容器上边的距离
+                y2: '20%',//与容器下面的距离
+
+                //如果设置网格宽高则无需设置位置
+                width: '',//网格宽度
+                height: '',//网格高度
+                 containLabel: true//是否包括 刻度标签（XY轴）
+
+                 // /*边框样式*/
+                borderColor: '#f02',//, '#545454','#999' 边框颜色
+                borderWidth: 1, //边框宽度
+                borderType: 'solid', //边框类型
+
+                // /*投影样式*/
+                shadowColor: 'rgba(0,0,0,.5)', //投影颜色
+                shadowBlur: 10, //模糊程度
+                shadowOffsetX: 10, //偏离x的距离
+                shadowOffsetY: 10, //偏离y的距离
+                opacity: 0.5,//可在rbga中直接设置
+
+            },
+            // /************************************工具箱*************************************/
+            toolbox: {
+                show: true,
+                x2: '10%',
+                y: '5%',
+                feature: {
+                    // mark: {show: true},
+                    dataView: {show: true, readOnly: false}, //数据视图
+                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']}, //类型切换
+                    restore: {show: true}, //还原视图
+                    saveAsImage: {show: true}, //保存为图片
+                    dataZoom: { //数据缩放
+                        show: true
+                    },
+                    brush: {//选框组件的按键
+                        show: true,
+                        //对单个工具样式进行设置
+                        iconStyle: {//图标样式
+                            normal: {//正常情况下
+                                borderColor: '#545454',//, '#545454','#999'
+                                borderWidth: 1,
+                                borderType: 'solid',
+                                shadowColor: 'rgba(0,0,0,.5)',
+                                shadowBlur: 10,
+                                shadowOffsetX: 10,
+                                shadowOffsetY: 10,
+                                opacity: 0.5,
+                                textPosition: 'left' //文字位置
+
+                            },
+                            emphasis: {//鼠标经过时，样式属性同上
+
+                            }
+
+                        }
+
+                    }
+                },
+                //对工具箱内所有工具进行相同的样式设置
+                iconStyle: {//图标样式
+                    normal: {
+                        borderColor: '#f02',//, '#545454','#999'
+                        borderWidth: 1,
+                        borderType: 'solid',
+                        shadowColor: 'rgba(0,0,0,.5)',
+                        shadowBlur: 10,
+                        shadowOffsetX: 10,
+                        shadowOffsetY: 10,
+                        opacity: 0.5,
+                        textPosition: 'left'
+
+                    },
+                    emphasis: {//鼠标经过时，样式属性同上
+
+                    }
+
+                }
+
+            },
+            calculable: false,//是否能够拖拽重计，Echarts3不支持
+            // /**************************************X轴*************************************/
+            xAxis: [
+                {
+                    type: 'category',//'value'数值轴，适用于连续数据。
+                    'category'类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。
+                    'time'时间轴，适用于连续的时序数据，与数值轴相比时间轴带有时间的格式化，在刻度计算上也有所不同，例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度。
+                    'log' 对数轴。适用于对数数据。
+
+                    min: 100,//类目轴中无效
+                    max: 1000,
+                    splitNumber: 5,//坐标轴的分割段数(预估值)，类目轴中无效
+
+                      /*设置x轴名称及样式*/
+                    name: '',//定义横轴名称,默认位置在横轴末端
+                    nameLocation: 'start',//仅三个位置 middle | end
+                    boundaryGap: false, //坐标轴两边留白 ,type 为数值型的时候可设置 [num, num] | [ '%','%']
+                    nameTextStyle:{ /*坐标轴名称样式*/
+                    },
+                    nameGap:  16, //与坐标轴距离
+                    nameRotate : 30,//旋转角度
+
+                    inverse: false,//是否反向显示
+                    silent: false,//静态不交互
+
+                    // /*关于刻度线的样式*/
+                    axisTick: {//是否显示刻度
+                        show: true,
+                        alignWithLabel: true,//类目轴中在 boundaryGap 为 true 的时候有效，可以保证刻度线和标签对齐。
+                        inside: false,
+                        length: 5,
+                        lineStyle:{
+                        color: '#f03',
+                        width: 1,
+                        type: 'solid', //指示器类型 实线（solid） | 点线（dotted） | 虚线（dashed）;
+                        shadowColor: 'rgba(0,0,0,.5)', //阴影颜色
+                        shadowBlur:10, //阴影模糊大小
+                        shadowOffsetX: 10,//偏离水平位置
+                        shadowOffsetY: 10,//偏离垂直位置
+                        opacity: 0.9
+                        }
+                    },
+                    boundaryGap: false, //坐标轴两边留白 ,type 为数值型的时候可设置 [num, num]
+
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],//默认样式
+
+                    data: [//对单个数据进行样式配置
+                    {
+                        value: '周一',
+                        textStyle:{
+                           color: '#333',
+                           align: 'right',
+                           baseline: 'top'
+                     }
+                     }
+                     ...
+                     ],
+                    axisLabel: {//坐标轴刻度标签的相关设置。
+                        interval: 1, //刻度和数据间隔显示
+                        textStyle: {
+                            color: function (val) {
+                            //对x轴数据进行判断，返回颜色字符串
+                                return val == '周一' ? 'red' : 'green';
+                            }
+                        },
+                        formatter: function (val) {
+                        //控制x轴参数名的格式输出
+                            if (val == '周三') {
+                                return val + 'kg';
+                            } else {
+                                return val;
+                            }
+                        }
+                    }
+                    splitLine: { //图表背景的横轴虚线
+                        show: true
+                    },
+                    splitArea: { //分割区域
+                        show: true
+
+                    }
+                }
+            ],
+            // /**************************************Y轴*************************************/
+            yAxis: [
+                {
+                    //同x轴属性
+                }
+            ],
+            // /************************************提示框**********************************/
+            tooltip: {
+                show: true,
+                trigger: 'item',// 触发类型 数据项图形触发（item） | 坐标轴（xAxis）
+                showContent: true, //是否显示提示框悬浮层
+                alwaysShowContent: false, //永远显示提示框内容
+                triggerOn: 'mousemove', //mousemove //提示框的触发形式 点击（click） | 鼠标移动（mousemove） |不触发（none）
+                showDelay: 0,//浮层显示延迟 ms——！在 triggerOn 为 'mousemove' 时有效。
+                hideDelay: 0,//浮层隐藏延迟 ms——！在 alwaysShowContent 为 'true' 时无效
+                enterable: false, //鼠标能否进入提示框
+                axisPointer: {   // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow', // 默认为直线，可选为：直线指示器'line'
+                                    // 阴影指示器'shadow' | 十字准星指示器'cross'
+                    axis: 'x',   //指示器坐标轴'x', 'y', 'radius', 'angle'
+                    lineStyle: {//直线指示器样式
+                        color: '#f03',
+                        width: 1,
+                        type: 'solid', //指示器类型 实线（solid） | 点线（dotted） | 虚线（dashed）;
+                        shadowColor: 'rgba(0,0,0,.5)', //阴影颜色
+                        shadowBlur:10, //阴影模糊大小
+                        shadowOffsetX: 10,//偏离水平位置
+                        shadowOffsetY: 10,//偏离垂直位置
+                        opacity: 0.9
+
+                    },
+                    shadowStyle: {//阴影指示器样式，同上
+
+                    },
+                    crossStyle: {//十字准星指示器样式
+                        //同上
+                        textStyle: {// 提示文字的样式
+                            fontSize: '18', //字体大小
+                            fontWeight: '600',//字体粗细 —— bold、bolder
+                            fontStyle: 'normal',//字体样式——斜体（italic、oblique）、正常（normal）
+                            fontFamily: 'SimSun',//字体
+                            color: '#3b8bce'//颜色
+                        }
+
+                    }
+                }
+
+                position: function (point, params, dom) {//返回格式必须是数组Array[]格式 [num, num]
+                    // point:鼠标位置Array
+                    console.info('提示框位置：', params);
+                    return [point[0], 10];
+                },
+                //格式控制器
+                formatter: '{b}&lt;br/&gt;{a0}: {c0}&lt;br /&gt;{a1}: {c1}&lt;br/&gt;' + '{a2}: {c2}&lt;br /&gt;{a3}: {c3}&lt;br /&gt;{a4}: {c4}', //a：系列名，b：数据名，c：数据值
+                formatter: function(params, ticket, callback){
+                    console.info('formatter数据集:',params);
+                },
+
+                //为提示框浮层添加阴影
+                extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'
+
+            },
+            // /************************************数据缩放**********************************/
+            dataZoom: [
+                {    type: 'inside'
+                }
+                {
+                    id: 'dataZoomX',
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    filterMode: 'filter'
+                },
+                {
+                    id: 'dataZoomY',
+                    type: 'slider',
+                    yAxisIndex: [0],
+                    filterMode: 'empty'
+                }
+            ],
+            series: [
+                {
+                    name: '邮件营销',//数据名
+                    type: 'line',
+                    stack: '总量',
+                    symbolSize: 30,//折现图中控制拐点大小
+                    label: {//针对柱状图 ，饼图
+                        //显示数值标签
+                        normal: {//正常情况下
+                            show:true,
+                            position:'inside',//'top''left''right''bottom''inside''insideLeft','insideRight''insideTop''insideBottom''insideTopLeft','insideBottomLeft''insideTopRight''insideBottomRight'
+
+                        },
+                        emphasis: {
+                        //鼠标经过时
+                        }
+                    }
+                    //系列中的数据标注内容
+                    markPoint: {
+                        symbol: 'circle',
+                        //标注图标：'circle', 'rect', 'roundRect','triangle', 'diamond', 'pin', 'arrow','image://url'//标注图标或自定义图片
+                        data: [
+                            {type: 'max', name: '最大值', symbolSize: 200},
+                            {type: 'min', name: '最小值'}
+                        ]
+
+                    },
+                    //系列中的数据标线内容
+                    markLine: {
+                        data: [
+                            {type: 'average', name: '平均值'}
+                        ],
+                        lineStyle: {//数据标线样式
+                            normal: {
+                                // show: true
+                                // type: 'solid'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [5, 5, 0, 0]
+                            color: '#2ec7c9'
+                        }
+
+                    },
+                    data: [
+                    {
+                     value: msglossrate1, //值为变量
+                     name: '邮件营销',
+                     itemStyle: {
+                        normal: {
+                            color: '#00EE00',
+                            label: {
+                                show: function () {
+                                    if (msglossrate1 == 0) {
+                                     return true;
+                                    }
+                                }()
+                            },
+                            labelLine: {
+                                show: function () {
+                                    if (msglossrate1 == 0) {
+                                        return false;
+                                    }
+                                }(),
+                                length: 5
+                            }
+                        }
+                    }
+                    }, 132, 101, 134, 90, 230, 210]
+
+                },
+                {
+                    name: '联盟广告',
+                    type: 'line',
+                    stack: '总量',
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: '视频广告',
+                    type: 'line',
+                    stack: '总量',
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: '直接访问',
+                    type: 'line',
+                    stack: '总量',
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name: '搜索引擎',
+                    type: 'line',
+                    stack: '总量',
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+</code></pre></div><div class="language- line-numbers-mode"><pre class="language-text"><code>
+
+### 小结
+
+    1.是否显示——&gt;show: true | false， 所有组件都有的一级属性，其实当你在option中写出这个组件名时就已经默认显示true。
+
+    2.文字样式
+    凡是有文字或者数值输出显示的组件，都存在textStyle属性配置文字样式
+    textStyle:{
+        color: '#333',//字体颜色
+        fontSize: '12px',//字体大小
+        fontWeight: 'normal',//字体粗细 —— bold、bolder
+        fontStyle: 'normal', //字体样式——斜体（italic、oblique）、正常（normal）
+        fontFamily: 'SimSun'//宋体
+    },
+    此外padding,margin,backgroundColor,borderColor,borderWidth等属性通常与textStyle同级
+
+    3.位置
+     1) position: left | right | center | [num, num] | ['%','%'] |...
+     拥有此属性的组件有：tooltip(提示框), xAxis(x轴), yAxis(y轴)
+
+     2)  x： , y:  ,x2: , y2:   ——&gt;与容器边框的距离
+          - x: '10%', //与容器左边的距离
+          - x2: '10%',//与容器右边的距离
+          - y: '20%',//与容器上边的距离
+          - y2: '20%',//与容器下面的距离
+     拥有此属性的组件有：title(标题), toolbox(辅助工具箱), grid(网格), legend(图例)
+
+     3) left | right | top | bottom
+     拥有此属性的组件有：title(标题), toolbox(辅助工具箱), grid(网格), legend(图例)
+
+    4.待续......
+
+### ADD OPTION
+```js
+//xAxis 中的 axisLabel 的过长换行
+   formatter: function(value){
+    console.info('params',value);
+    var newParamsName = &quot;&quot;;// 最终拼接成的字符串
+    var paramsNameNumber = value.length;// 实际标签的个数
+    var provideNumber = 8;// 每行能显示的字的个数
+    var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+    /**
+    * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+    */
+    // 条件等同于rowNumber&gt;1
+    if (paramsNameNumber &gt; provideNumber) {
+    /** 循环每一行,p表示行 */
+    for (var p = 0; p &lt; rowNumber; p++) {
+    var tempStr = &quot;&quot;;// 表示每一次截取的字符串
+    var start = p * provideNumber;// 开始截取的位置
+    var end = start + provideNumber;// 结束截取的位置
+    // 此处特殊处理最后一行的索引值
+    if (p == rowNumber - 1) {
+    // 最后一次不换行
+    tempStr = value.substring(start, paramsNameNumber);
+    } else {
+    // 每一次拼接字符串并换行
+    tempStr = value.substring(start, end) + &quot;\n&quot;;
+    }
+    newParamsName += tempStr;// 最终拼成的字符串
+    }
+
+    } else {
+    // 将旧标签的值赋给新标签
+    newParamsName = value;
+    }
+    //将最终的字符串返回
+    return newParamsName
+    }
+
+//formatter:function(val){
+//    return val.split(&quot;&quot;).join(&quot;\n&quot;);
+//}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2020年11月26日星期四上午10点22分</span></div></footer> <!----> <!----> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-40a3448a><li class="level-2" data-v-40a3448a><a href="/docs/other/echart%E5%9B%BE%E8%A1%A8%E4%B8%AD%20%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html#一、使用方式" class="sidebar-link" data-v-40a3448a>一、使用方式</a></li><li class="level-3" data-v-40a3448a><a href="/docs/other/echart%E5%9B%BE%E8%A1%A8%E4%B8%AD%20%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html#_1-模块化包引入" class="sidebar-link" data-v-40a3448a>1.模块化包引入</a></li><li class="level-3" data-v-40a3448a><a href="/docs/other/echart%E5%9B%BE%E8%A1%A8%E4%B8%AD%20%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html#_2-模块化单文件引入（推荐）" class="sidebar-link" data-v-40a3448a>2.模块化单文件引入（推荐）</a></li><li class="level-2" data-v-40a3448a><a href="/docs/other/echart%E5%9B%BE%E8%A1%A8%E4%B8%AD%20%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86.html#二、option-配置参数-直角坐标系相关组件" class="sidebar-link" data-v-40a3448a>二、option 配置参数——直角坐标系相关组件</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;right:168px;bottom:0px;width:135px;height:300px;z-index:99999;opacity:1;pointer-events:none;"><canvas id="live2d_canvas" width="135" height="300" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:135px;height:300px;"></canvas></div></div></div>
+    <script src="/assets/js/app.7fe1ffb5.js" defer></script><script src="/assets/js/3.788743b5.js" defer></script><script src="/assets/js/1.29b2523c.js" defer></script><script src="/assets/js/58.0cc5679f.js" defer></script><script src="/assets/js/14.37268bde.js" defer></script>
+  </body>
+</html>
